@@ -20,6 +20,7 @@ let RALERT_DURATION = 0.3
 
 let SUCCESS_COLOR = UIColor.init(red: 126/255, green: 216/255, blue: 33/255, alpha: 1)
 let WARNING_COLOR = UIColor.init(red: 245/255, green: 166/255, blue: 35/255, alpha: 1)
+let INFO_COLOR = UIColor.init(red: 102.0/255.0, green:204.0/255.0, blue:255.0/255.0, alpha:1.0)
 let ERROR_COLOR = UIColor.init(red: 208/255, green: 2/255, blue: 27/255, alpha: 1)
 
 
@@ -67,7 +68,7 @@ extension UIView{
         layer.path = path.cgPath
         self.layer.addSublayer(layer)
     }
-    func drawWarningSymbol() {
+    func drawWarningSymbol(color: UIColor = WARNING_COLOR) {
         self.cleanLayer(view: self)
         let path = UIBezierPath.init(arcCenter: CGPoint.init(x: RLOGOVIEW_SIZE/2, y: RLOGOVIEW_SIZE/2), radius: RLOGOVIEW_SIZE/2, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
         path.lineCapStyle = .round
@@ -82,7 +83,7 @@ extension UIView{
         
         let layer = CAShapeLayer.init()
         layer.fillColor = UIColor.clear.cgColor
-        layer.strokeColor = WARNING_COLOR.cgColor
+        layer.strokeColor = color.cgColor
         layer.lineWidth = 5
         layer.path = path.cgPath
         self.layer.addSublayer(layer)

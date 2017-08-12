@@ -22,11 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w95-5C-DJu">
-                                <rect key="frame" x="164" y="130" width="46" height="30"/>
+                                <rect key="frame" x="172" y="130" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="警告"/>
                                 <connections>
                                     <action selector="successAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PNs-qG-ssg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1d-Nr-EUW">
+                                <rect key="frame" x="172" y="215" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="错误"/>
+                                <connections>
+                                    <action selector="errorAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WOI-tL-1kP"/>
                                 </connections>
                             </button>
                         </subviews>

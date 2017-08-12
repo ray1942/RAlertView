@@ -177,7 +177,8 @@ class RAlertView: UIView {
                 }
             }
         }
-        if self.style == RAlertStyle.Warning {
+        
+        if self.style == RAlertStyle.Warning  {
             self.logoView?.drawWarningSymbol()
             self.cancelBtn?.setTitleColor(WARNING_COLOR, for: UIControlState.normal)
             self.cancelBtn?.layer.borderColor = WARNING_COLOR.cgColor
@@ -187,13 +188,26 @@ class RAlertView: UIView {
                 }
             }
         }
+        
+        if self.style == RAlertStyle.Info  {
+            self.logoView?.drawWarningSymbol(color: INFO_COLOR)
+            self.logoView?.transform = (self.logoView?.transform.rotated(by: CGFloat(Double.pi)))!
+            self.cancelBtn?.setTitleColor(INFO_COLOR, for: UIControlState.normal)
+            self.cancelBtn?.layer.borderColor = INFO_COLOR.cgColor
+            if self.otherBtn != nil || self.otherBtn?.count == 0 {
+                for btn in self.otherBtn! {
+                    btn.backgroundColor = INFO_COLOR
+                }
+            }
+        }
+        
         if self.style == RAlertStyle.Error{
             self.logoView?.drawErrorSymbol()
             self.cancelBtn?.setTitleColor(ERROR_COLOR, for: UIControlState.normal)
             self.cancelBtn?.layer.borderColor = ERROR_COLOR.cgColor
             if self.otherBtn != nil || self.otherBtn?.count == 0 {
                 for btn in self.otherBtn! {
-                    btn.backgroundColor = SUCCESS_COLOR
+                    btn.backgroundColor = ERROR_COLOR
                 }
             }
         }
@@ -205,7 +219,7 @@ class RAlertView: UIView {
             self.cancelBtn?.layer.borderColor = SUCCESS_COLOR.cgColor
             if self.otherBtn != nil || self.otherBtn?.count != 0 {
                 for btn in self.otherBtn! {
-                    btn.backgroundColor = ERROR_COLOR
+                    btn.backgroundColor = SUCCESS_COLOR
                 }
             }
         }

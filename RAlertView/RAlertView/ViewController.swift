@@ -20,10 +20,20 @@ class ViewController: UIViewController {
 
     @IBAction func successAction(_ sender: Any) {
         
-       let alert = RAlertView.init(title: "123123", detailText: "123123123123123123123123123123123123123123123123123123123123123123123123123123", cancelTitle: "确定",style: .Warning)
+       let alert = RAlertView.init(title: "警告", detailText: "请看这是个警告", cancelTitle: "确定",style: .Warning)
         alert.enterModel = .Bottom
         alert.leaveModel = .Bottom
         alert.show()
+        
+        
+    }
+    @IBAction func errorAction(_ sender: Any) {
+        
+        let alert = RAlertView.init(title: "错误", detailText: "错误详情", cancelTitle: "取消", style: .Error, delegate: self, otherTitles: ["确认"])
+        alert.enterModel = .Left
+        alert.leaveModel = .Right
+        alert.show()
+        
         
         
     }
@@ -34,4 +44,8 @@ class ViewController: UIViewController {
 
 
 }
-
+extension ViewController: RAlertViewDelegate{
+    func alertView(alertView: RAlertView, didClickIndex: Int) {
+        print(didClickIndex)
+    }
+}
