@@ -1,6 +1,7 @@
 # RAlertView
 RAlertView --- 弹窗
 前几天写了菊花，后来发现还缺个弹窗，于是乎写了简单的弹窗。到目前为止，项目中遇到的弹窗还没有要求说有输入框的，所以写了个简简单单的弹窗。相关说明也同步到简书了 http://www.jianshu.com/p/590882ccac8d
+显示效果和部分代码学习了https://github.com/mrchenhao/HHAlertView，感谢作者
 
 显示效果有多种：成功(默认)／错误／警告／详情／自定义图标
 
