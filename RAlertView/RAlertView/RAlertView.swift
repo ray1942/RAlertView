@@ -16,7 +16,7 @@ protocol RAlertViewDelegate:NSObjectProtocol {
 class RAlertView: UIView {
 
     
-    var delegate: RAlertViewDelegate?
+    weak var delegate: RAlertViewDelegate?
     
     var completClosure:(()->())?
 //    警告样式
